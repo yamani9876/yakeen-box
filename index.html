@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التقرير النهائي لحفل الزواج الجماعي الثاني عشر لقبيلة النوافل لعام 1448هـ</title>
+    
+    <!-- خط كايرو -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #f4f7f9;
+            color: #333;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        /* 1. الهيدر الرسمي */
+        header {
+            background: #fff;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+            padding: 15px 0;
+            border-bottom: 3px solid #8a6b3b;
+        }
+
+        .header-klishe {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .header-right, .header-left {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .header-right {
+            text-align: right;
+        }
+
+        .header-right h2 {
+            color: #0b8aa7;
+            font-size: 20px;
+            font-weight: 800;
+        }
+
+        .header-right span {
+            color: #8a6b3b;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .header-center {
+            text-align: center;
+            flex: 0 0 auto;
+        }
+
+        .logo-icon {
+            width: 70px;
+            height: 70px;
+        }
+
+        .header-left {
+            text-align: left;
+        }
+
+        .header-left h3 {
+            color: #444;
+            font-size: 15px;
+            font-weight: 700;
+        }
+
+        .header-left span {
+            color: #666;
+            font-size: 12px;
+        }
+
+        /* 2. العنوان الرئيسي */
+        .hero {
+            padding: 50px 0 40px;
+            background: linear-gradient(135deg, #0b7285, #084f60);
+            color: #fff;
+            text-align: center;
+            border-bottom-left-radius: 40px;
+            border-bottom-right-radius: 40px;
+        }
+
+        .hero h1 {
+            font-size: 28px;
+            color: #fff;
+            font-weight: 800;
+            line-height: 1.5;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* 3. شبكة الأيقونات والتنسيق */
+        .interactive-section {
+            padding: 50px 0;
+        }
+
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .icon-card {
+            background: #fff;
+            padding: 25px 15px;
+            border-radius: 20px;
+            text-align: center;
+            text-decoration: none;
+            color: #333;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .icon-card:hover {
+            transform: translateY(-8px);
+            border-color: #0b8aa7;
+            box-shadow: 0 15px 30px rgba(11, 138, 167, 0.15);
+        }
+
+        .icon-card .emoji {
+            font-size: 40px;
+            margin-bottom: 12px;
+            width: 75px;
+            height: 75px;
+            line-height: 75px;
+            background: #edf8fb;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .icon-card h3 {
+            font-size: 17px;
+            color: #0b8aa7;
+            font-weight: 700;
+        }
+
+        /* أقسام المحتوى */
+        .content-box {
+            background: #fff;
+            border-radius: 20px;
+            padding: 35px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.04);
+            border-right: 5px solid #0b8aa7;
+        }
+
+        .content-box h3 {
+            color: #0b8aa7;
+            font-size: 22px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* تنسيق الأذونات والملفات المرفقة */
+        .files-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .file-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: 0.3s ease;
+        }
+
+        .file-card:hover {
+            border-color: #0b8aa7;
+            background: #fff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .file-title {
+            font-weight: 700;
+            color: #2d3748;
+            font-size: 15px;
+            margin-bottom: 8px;
+        }
+
+        .file-meta {
+            font-size: 13px;
+            color: #718096;
+            margin-bottom: 12px;
+        }
+
+        .file-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .pdf-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            background: #edf8fb;
+            color: #0b8aa7;
+            padding: 8px 15px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            border: 1px solid #0b8aa7;
+            font-size: 13px;
+            flex: 1;
+            transition: 0.2s;
+            cursor: pointer;
+        }
+
+        .pdf-btn:hover {
+            background: #0b8aa7;
+            color: #fff;
+        }
+
+        /* جدول المحاسبة والمالية */
+        .table-responsive {
+            overflow-x: auto;
+            margin-top: 15px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: right;
+            font-size: 14px;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        th {
+            background-color: #edf8fb;
+            color: #0b8aa7;
+            font-weight: 700;
+        }
+
+        tr:hover {
+            background-color: #f8fafc;
+        }
+
+        .badge {
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .badge-success { background: #d4edda; color: #155724; }
+        .badge-info { background: #cce5ff; color: #004085; }
+
+        .media-container {
+            margin-top: 15px;
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 12px;
+        }
+
+        /* النافذة المنبثقة لعرض الـ PDF */
+        .pdf-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .pdf-modal-content {
+            background: #fff;
+            width: 85%;
+            max-width: 900px;
+            height: 85vh;
+            border-radius: 12px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .pdf-modal-header {
+            padding: 15px 20px;
+            background: #0b8aa7;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .pdf-modal-close {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .pdf-modal-body {
+            flex: 1;
+            width: 100%;
+            height: 100%;
+        }
+
+        .pdf-modal-body iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* الفوتر */
+        footer {
+            background: #084f60;
+            color: #fff;
+            padding: 30px 0;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        footer p {
+            font-size: 14px;
+            color: #b2dfdb;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. الكليشة (الهيدر) -->
+    <header>
+        <div class="container header-klishe">
+            <div class="header-right">
+                <h2>صندوق يقين وعطاء</h2>
+                <span>ترخيص رقم: 1200772400</span>
+            </div>
+
+            <div class="header-center">
+                <svg class="logo-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="48" fill="#EDF8FB" stroke="#0B8AA7" stroke-width="2"/>
+                    <path d="M50 25 C35 25 25 38 25 50 C25 68 50 82 50 82 C50 82 75 68 75 50 C75 38 65 25 50 25 Z" fill="#4CAF50"/>
+                    <path d="M50 35 C40 35 32 43 32 52 C32 63 50 73 50 73 C50 73 68 63 68 52 C68 43 60 35 50 35 Z" fill="#FFFFFF"/>
+                    <circle cx="50" cy="20" r="5" fill="#8A6B3B"/>
+                    <path d="M35 78 C42 70 58 70 65 78 C58 83 42 83 35 78 Z" fill="#8A6B3B"/>
+                </svg>
+            </div>
+
+            <div class="header-left">
+                <h3>المركز الوطني لتنمية القطاع غير الربحي</h3>
+                <span>إشراف وتنظيم الرسمية</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. العنوان الرئيسي -->
+    <section class="hero">
+        <div class="container">
+            <h1>التقرير النهائي لحفل الزواج الجماعي الثاني عشر لقبيلة النوافل لعام 1448هـ</h1>
+        </div>
+    </section>
+
+    <!-- 3. شبكة الأيقونات -->
+    <section class="interactive-section">
+        <div class="container">
+            <div class="icon-grid">
+                <a href="#board" class="icon-card">
+                    <span class="emoji">🏛️</span>
+                    <h3>مجلس الأمناء</h3>
+                </a>
+
+                <a href="#insights" class="icon-card">
+                    <span class="emoji">💡</span>
+                    <h3>إضاءة والحوكمة</h3>
+                </a>
+
+                <a href="#platform" class="icon-card">
+                    <span class="emoji">💻</span>
+                    <h3>المنصة الرقمية</h3>
+                </a>
+
+                <a href="#financial-report" class="icon-card">
+                    <span class="emoji">💰</span>
+                    <h3>التقرير المالي</h3>
+                </a>
+
+                <a href="https://hdth.wzn.sa/p/7/report/" target="_blank" class="icon-card">
+                    <span class="emoji">📊</span>
+                    <h3>التقرير الشامل</h3>
+                </a>
+
+                <a href="#rules" class="icon-card">
+                    <span class="emoji">⚖️</span>
+                    <h3>ضوابط الصرف والقرارات</h3>
+                </a>
+
+                <a href="#tasks" class="icon-card">
+                    <span class="emoji">👥</span>
+                    <h3>مهام اللجان</h3>
+                </a>
+
+                <a href="#permits" class="icon-card">
+                    <span class="emoji">📄</span>
+                    <h3>أذونات الصرف المعتمدة</h3>
+                </a>
+
+                <a href="#thanks-and-excellence" class="icon-card">
+                    <span class="emoji">🏆</span>
+                    <h3>شكر وتميز</h3>
+                </a>
+
+                <a href="#quality" class="icon-card">
+                    <span class="emoji">✨</span>
+                    <h3>الجودة</h3>
+                </a>
+
+                <a href="#media-section" class="icon-card">
+                    <span class="emoji">🎬</span>
+                    <h3>المحتوى المرئي والصوتي</h3>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- أقسام التفاصيل -->
+    <section class="container">
+
+        <div id="board" class="content-box">
+            <h3>🏛️ مجلس الأمناء</h3>
+            <p style="line-height: 1.8; margin-bottom: 15px;">
+                تهنئة مقدمة من مجلس أمناء منظمة يقين وعطاء إلى شيخ القبيلة الشيخ عبدالعزيز بن محمد بن مصري، ورؤساء وأعضاء اللجان خاصة، والقبيلة عامة، على نجاح حفل الزواج الجماعي الثاني عشر لقبيلة النوافلة.
+            </p>
+            <div class="files-grid">
+                <div class="file-card">
+                    <div class="file-title">كلمة مجلس الأمناء الرسمية</div>
+                    <div class="file-meta">رسالة تهنئة وشكر لشيخ القبيلة واللجان والرجال المساهمين</div>
+                    <div class="file-actions">
+                        <button onclick="openPdf('./board-word.pdf', 'كلمة مجلس الأمناء')" class="pdf-btn">📄 استعراض الكلمة (PDF)</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="insights" class="content-box">
+            <h3>💡 إضاءة والحوكمة</h3>
+            <p>إيماناً بالشفافية والتزاماً بلوائح المركز الوطني لتنمية القطاع غير الربحي، تم تطبيق أعلى معايير الحوكمة المالية والإدارية وتعيين مسؤولين لمتابعة جودة التنفيذ لجميع المبادرات.</p>
+            <div class="files-grid">
+                <div class="file-card">
+                    <div class="file-title">وثيقة إضاءة وحوكمة التقرير الختامي</div>
+                    <div class="file-meta">تتضمن التفاصيل الإدارية والتنفيذية لبرنامج الزواج الجماعي</div>
+                    <div class="file-actions">
+                        <button onclick="openPdf('./insights.pdf', 'وثيقة إضاءة والحوكمة')" class="pdf-btn">📄 استعراض المستند (PDF)</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="platform" class="content-box">
+            <h3>💻 المنصة الرقمية</h3>
+            <p>توضيح آليات وتنظيم العمل الإلكتروني والتحول الرقمي للقبيلة والصندوق لتسهيل عمليات التنسيق والمتابعة والتبرعات.</p>
+        </div>
+
+        <div id="financial-report" class="content-box">
+            <h3>💰 التقرير المالي الختامي</h3>
+            <p>جدول مفصل للإيرادات وأوامر الصرف المعتمدة للجان والموردين المعتمدين لحفل الزواج الجماعي 1448هـ:</p>
+            
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>رقم البيان / الأمر</th>
+                            <th>الجهة / المورد</th>
+                            <th>الغرض / الخدمة</th>
+                            <th>المبلغ (ر.س)</th>
+                            <th>الحالة</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>أمر صرف #101</td>
+                            <td>مجاهد العتيبي (مواشي)</td>
+                            <td>تأمين الذبائح والمواشي للحفل</td>
+                            <td>80,000.00</td>
+                            <td><span class="badge badge-success">معتمد ومصروف</span></td>
+                        </tr>
+                        <tr>
+                            <td>أمر صرف #102</td>
+                            <td>مؤسسة الحراسات الأمنية</td>
+                            <td>تأمين وتنظيم الأمن والسلامة بموقع الحفل</td>
+                            <td>2,000.00</td>
+                            <td><span class="badge badge-success">معتمد ومصروف</span></td>
+                        </tr>
+                        <tr>
+                            <td>أمر صرف #103</td>
+                            <td>خطاط نور الطائف</td>
+                            <td>طباعة اللوحات والإعلانات والهدايا</td>
+                            <td>12,500.00</td>
+                            <td><span class="badge badge-success">معتمد ومصروف</span></td>
+                        </tr>
+                        <tr>
+                            <td>أمر صرف #104</td>
+                            <td>مؤسسة الإنتاج الإعلامي</td>
+                            <td>التغطية الإعلامية، التصوير والتوثيق</td>
+                            <td>15,000.00</td>
+                            <td><span class="badge badge-success">معتمد ومصروف</span></td>
+                        </tr>
+                        <tr>
+                            <td>بيان ختامي #01</td>
+                            <td>التقرير المالي النهائي الشامل</td>
+                            <td>مجموع مصروفات اللجان + المبالغ الموزعة للعرسان</td>
+                            <td>حسب البيان</td>
+                            <td><span class="badge badge-info">مكتمل</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="files-grid" style="margin-top: 20px;">
+                <div class="file-card">
+                    <div class="file-title">التقرير المالي الختامي الشامل (PDF)</div>
+                    <div class="file-meta">يتضمن كشف الإيداعات والمصروفات بالتفصيل</div>
+                    <div class="file-actions">
+                        <button onclick="openPdf('./financial-report.pdf', 'التقرير المالي الشامل')" class="pdf-btn">📄 فتح الملف</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="rules" class="content-box">
+            <h3>⚖️ ضوابط الصرف والقرارات</h3>
+            <p>القرارات الرسمية والـ 12 ضابطاً المعتمدة لإدارة ومراقبة الصرف المالي لضمان توجيه الدعم لجميع العرسان والمستحقين بأسلوب عادل.</p>
+        </div>
+        
+        <div id="tasks" class="content-box">
+            <h3>👥 مهام اللجان</h3>
+            <p>بيان المهام والتوزيع الخطي للجان العاملة بالمشروع (لجنة التموين، لجنة الاستقبال والضيافة، اللجنة الإعلامية، ولجنة الصالة الداخلية).</p>
+        </div>
+
+        <div id="permits" class="content-box">
+            <h3>📄 نماذج أذونات الصرف والاعتمادات</h3>
+            <p>يمكنك معاينة واستعراض وثائق وإذونات الصرف الرسمية المعتمدة للموردين مباشرة من هنا:</p>
+            
+            <div class="files-grid">
+                <div class="file-card">
+                    <div class="file-title">إذن شراء الذبائح (مجاهد العتيبي)</div>
+                    <div class="file-meta">القيمة: 80,000 ريال سعودي</div>
+                    <div class="file-actions">
+                        <button onclick="openPdf('./permits-meat.pdf', 'إذن شراء الذبائح')" class="pdf-btn">🔍 معاينة الوثيقة</button>
+                    </div>
+                </div>
+
+                <div class="file-card">
+                    <div class="file-title">إذن صرف خطاط نور الطائف</div>
+                    <div class="file-meta">طباعة وتجهيز المطبوعات واللوحات</div>
+                    <div class="file-actions">
+                        <button onclick="openPdf('./permits-calligraphy.pdf', 'إذن صرف الخطاط')" class="pdf-btn">🔍 معاينة الوثيقة</button>
+                    </div>
+                </div>
+
+                <div class="file-card">
+                    <div class="file-title">إذن صرف الحراسات الأمنية</div>
+                    <div class="file-meta">تنظيم وأمن موقع الحفلات</div>
+                    <div class="file-actions">
+                        <button onclick="openPdf('./permits-security.pdf', 'إذن صرف الحراسات الأمنية')" class="pdf-btn">🔍 معاينة الوثيقة</button>
+                    </div>
+                </div>
+
+                <div class="file-card">
+                    <div class="file-title">إذن صرف التغطية الإعلامية</div>
+                    <div class="file-meta">التصوير وإنتاج الفيديو والتوثيق</div>
+                    <div class="file-actions">
+                        <button onclick="openPdf('./permits-media.pdf', 'إذن صرف التغطية الإعلامية')" class="pdf-btn">🔍 معاينة الوثيقة</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="thanks-and-excellence" class="content-box">
+            <h3>🏆 شكر وتميز</h3>
+            <p style="margin-bottom: 15px;">
+                تقديم جزيل الشكر والتقدير وتكريم الجهود المتميزة للجان والمتطوعين والداعمين الذين ساهموا في نجاح إقامة الزواج الجماعي الثاني عشر:
+            </p>
+            
+            <div class="files-grid">
+                <div class="file-card">
+                    <div class="file-title">درع التميز - أ. صالح بن سعد النوفلي الحارثي</div>
+                    <div class="file-meta">رئيس لجنة البيانات المالية - تقديراً لجهوده المتميزة في حصر البيانات وإعداد التقارير المالية</div>
+                    <div class="file-actions">
+                        <button onclick="openPdf('./shield-saleh.pdf', 'درع التميز - أ. صالح')" class="pdf-btn">🏆 عرض الدرع (PDF)</button>
+                    </div>
+                </div>
+
+                <div class="file-card">
+                    <div class="file-title">درع التميز - أ. خالد بن عبدالرحمن النوفلي الحارثي</div>
+                    <div class="file-meta">رئيس اللجنة الإعلامية - تقديراً لجهوده المتميزة في الحوكمة والإدارة الرقمية</div>
+                    <div class="file-actions">
+                        <button onclick="openPdf('./shield-khaled.pdf', 'درع التميز - أ. خالد')" class="pdf-btn">🏆 عرض الدرع (PDF)</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="quality" class="content-box">
+            <h3>✨ الجودة</h3>
+            <p>معايير وضوابط الجودة المطبقة في تنظيم البرامج والمبادرات والمتابعة مع مسؤول الجودة المعتمد.</p>
+        </div>
+
+        <div id="media-section" class="content-box">
+            <h3>🎬 المحتوى المرئي والصوتي</h3>
+            <p>يمكن للمستخدم استعراض الفيديو التعريفي أو الاستماع للتقرير الصوتي مباشرة هنا:</p>
+            
+            <div class="media-container">
+                <h4 style="margin-bottom: 8px;">🔊 المقطع الصوتي للتقرير:</h4>
+                <audio controls style="width: 100%;">
+                    <source src="./audio-file.mp3" type="audio/mpeg">
+                    متصفحك لا يدعم مشغل الصوت.
+                </audio>
+            </div>
+
+            <div class="media-container" style="margin-top: 15px;">
+                <h4 style="margin-bottom: 8px;">🎥 الفيلم الوثائقي / المرئي:</h4>
+                <video controls style="width: 100%; max-height: 400px; border-radius: 8px;">
+                    <source src="./video-file.mp4" type="video/mp4">
+                    متصفحك لا يدعم مشغل الفيديو.
+                </video>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- النافذة المنبثقة لعرض الـ PDF داخل الموقع -->
+    <div id="pdfModal" class="pdf-modal">
+        <div class="pdf-modal-content">
+            <div class="pdf-modal-header">
+                <span id="pdfModalTitle">عرض المستند</span>
+                <button class="pdf-modal-close" onclick="closePdf()">&times;</button>
+            </div>
+            <div class="pdf-modal-body">
+                <iframe id="pdfFrame" src=""></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- الفوتر -->
+    <footer>
+        <div class="container">
+            <p>جميع الحقوق محفوظة © صندوق يقين وعطاء 1448هـ / 2026م</p>
+        </div>
+    </footer>
+
+    <!-- السكريبت للتحكم بفتح الملفات مباشرة داخل الموقع -->
+    <script>
+        function openPdf(fileUrl, title) {
+            document.getElementById('pdfModalTitle').innerText = title;
+            document.getElementById('pdfFrame').src = fileUrl;
+            document.getElementById('pdfModal').style.display = 'flex';
+        }
+
+        function closePdf() {
+            document.getElementById('pdfModal').style.display = 'none';
+            document.getElementById('pdfFrame').src = '';
+        }
+
+        // إغلاق النافذة عند الضغط خارجها
+        window.onclick = function(event) {
+            var modal = document.getElementById('pdfModal');
+            if (event.target == modal) {
+                closePdf();
+            }
+        }
+    </script>
+
+</body>
+</html>
