@@ -74,8 +74,8 @@
         }
 
         .logo-icon {
-            width: 70px;
-            height: 70px;
+            width: 85px;
+            height: 85px;
         }
 
         .header-left {
@@ -348,6 +348,70 @@
             border: none;
         }
 
+        /* معرض الصور */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .gallery-item {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            cursor: pointer;
+            aspect-ratio: 4 / 3;
+            background: #e2e8f0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 24px rgba(11, 138, 167, 0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .image-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            z-index: 1050;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .image-modal-content {
+            max-width: 90%;
+            max-height: 85vh;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            object-fit: contain;
+        }
+
+        .image-modal-close {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 32px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 1060;
+        }
+
         /* الفوتر */
         footer {
             background: #084f60;
@@ -374,13 +438,7 @@
             </div>
 
             <div class="header-center">
-                <svg class="logo-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="50" cy="50" r="48" fill="#EDF8FB" stroke="#0B8AA7" stroke-width="2"/>
-                    <path d="M50 25 C35 25 25 38 25 50 C25 68 50 82 50 82 C50 82 75 68 75 50 C75 38 65 25 50 25 Z" fill="#4CAF50"/>
-                    <path d="M50 35 C40 35 32 43 32 52 C32 63 50 73 50 73 C50 73 68 63 68 52 C68 43 60 35 50 35 Z" fill="#FFFFFF"/>
-                    <circle cx="50" cy="20" r="5" fill="#8A6B3B"/>
-                    <path d="M35 78 C42 70 58 70 65 78 C58 83 42 83 35 78 Z" fill="#8A6B3B"/>
-                </svg>
+                <img src="./logo.png" alt="شعار صندوق يقين وعطاء" class="logo-icon" style="object-fit: contain;">
             </div>
 
             <div class="header-left">
@@ -408,7 +466,7 @@
 
                 <a href="#insights" class="icon-card">
                     <span class="emoji">💡</span>
-                    <h3>إضاءة والحوكمة</h3>
+                    <h3>الإضاءة</h3>
                 </a>
 
                 <a href="#platform" class="icon-card">
@@ -438,7 +496,7 @@
 
                 <a href="#permits" class="icon-card">
                     <span class="emoji">📄</span>
-                    <h3>أذونات الصرف المعتمدة</h3>
+                    <h3>نماذج من أذونات الصرف</h3>
                 </a>
 
                 <a href="#thanks-and-excellence" class="icon-card">
@@ -454,6 +512,11 @@
                 <a href="#media-section" class="icon-card">
                     <span class="emoji">🎬</span>
                     <h3>المحتوى المرئي والصوتي</h3>
+                </a>
+
+                <a href="#gallery" class="icon-card">
+                    <span class="emoji">📸</span>
+                    <h3>معرض الصور</h3>
                 </a>
             </div>
         </div>
@@ -472,7 +535,7 @@
                     <div class="file-title">كلمة مجلس الأمناء الرسمية</div>
                     <div class="file-meta">رسالة تهنئة وشكر لشيخ القبيلة واللجان والرجال المساهمين</div>
                     <div class="file-actions">
-                        <button onclick="openPdf('./board-word.pdf', 'كلمة مجلس الأمناء')" class="pdf-btn">📄 استعراض الكلمة (PDF)</button>
+                        <button onclick="openPdf('./كلمة مجلس الأمناء(1).pdf', 'مجلس الأمناء')" class="pdf-btn">📄 استعراض الكلمة (PDF)</button>
                     </div>
                 </div>
             </div>
@@ -555,9 +618,10 @@
             <div class="files-grid" style="margin-top: 20px;">
                 <div class="file-card">
                     <div class="file-title">التقرير المالي الختامي الشامل (PDF)</div>
-                    <div class="file-meta">يتضمن كشف الإيداعات والمصروفات بالتفصيل</div>
+                    <div class="file-meta">يتضمن كشف الإيداعات والمصروفات المعتمدة بالتفصيل</div>
                     <div class="file-actions">
-                        <button onclick="openPdf('./financial-report.pdf', 'التقرير المالي الشامل')" class="pdf-btn">📄 فتح الملف</button>
+                        <button onclick="openPdf('./financial-report.pdf', 'التقرير المالي')" class="pdf-btn">📄 فتح الملف</button>
+                        <a href="./التقرير المالي النهائي (1).xlsm" download="التقرير المالي النهائي (1).xlsm" class="pdf-btn" style="background: #e8f5e9; color: #1b5e20; border-color: #2e7d32;">📊 تحميل ملف الحسابات (Excel)</a>
                     </div>
                 </div>
             </div>
@@ -618,7 +682,7 @@
         </div>
 
         <div id="permits" class="content-box">
-            <h3>📄 نماذج أذونات الصرف والاعتمادات</h3>
+            <h3>📄 نماذج من أذونات الصرف</h3>
             <p>يمكنك معاينة واستعراض وثائق وإذونات الصرف الرسمية المعتمدة للموردين مباشرة من هنا:</p>
             
             <div class="files-grid">
@@ -705,12 +769,42 @@
                         <button onclick="openPdf('./shield-khaled.pdf', 'درع التميز - أ. خالد')" class="pdf-btn">🏆 عرض الدرع (PDF)</button>
                     </div>
                 </div>
+                <div class="file-card">
+                    <div class="file-title">المسؤول المالي</div>
+                    <div class="file-meta">شهادة تقدير واعتماد المسؤول المالي للبرنامج</div>
+                    <div class="file-actions">
+                        <button onclick="openPdf('./المسؤول المالي.pdf', 'المسؤول المالي')" class="pdf-btn">📄 معاينة الوثيقة</button>
+                    </div>
+                </div>
+                <div class="file-card">
+                    <div class="file-title">شكر وتقدير - أ. عبدالله بن ملفي</div>
+                    <div class="file-meta">رسالة شكر وتقدير تقديراً لجهوده ومساهمته الفاعلة</div>
+                    <div class="file-actions">
+                        <button onclick="openPdf('./عبدالله بن ملفي.pdf', 'عبدالله بن ملفي')" class="pdf-btn">📄 معاينة الوثيقة</button>
+                    </div>
+                </div>
             </div>
         </div>
 
         <div id="quality" class="content-box">
             <h3>✨ الجودة</h3>
             <p>معايير وضوابط الجودة المطبقة في تنظيم البرامج والمبادرات والمتابعة مع مسؤول الجودة المعتمد.</p>
+            <div class="files-grid" style="margin-top: 15px;">
+                <div class="file-card">
+                    <div class="file-title">وثيقة الجودة</div>
+                    <div class="file-meta">معايير وضوابط الجودة المعتمدة لتنفيذ البرنامج</div>
+                    <div class="file-actions">
+                        <button onclick="openPdf('./الجودة.pdf', 'الجودة')" class="pdf-btn">📄 استعراض الوثيقة (PDF)</button>
+                    </div>
+                </div>
+                <div class="file-card">
+                    <div class="file-title">مسؤول الجودة</div>
+                    <div class="file-meta">اعتماد ومتابعة مسؤول الجودة لبرنامج الزواج الجماعي</div>
+                    <div class="file-actions">
+                        <button onclick="openPdf('./مسؤول الجودة.pdf', 'مسؤول الجودة')" class="pdf-btn">📄 استعراض الوثيقة (PDF)</button>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div id="media-section" class="content-box">
@@ -720,17 +814,56 @@
             <div class="media-container">
                 <h4 style="margin-bottom: 8px;">🔊 المقطع الصوتي للتقرير:</h4>
                 <audio controls style="width: 100%;">
-                    <source src="./audio-file.mp3" type="audio/mpeg">
+                    <source src="./123_040311432.wav" type="audio/wav">
                     متصفحك لا يدعم مشغل الصوت.
                 </audio>
             </div>
 
             <div class="media-container" style="margin-top: 15px;">
                 <h4 style="margin-bottom: 8px;">🎥 الفيلم الوثائقي / المرئي:</h4>
-                <video controls style="width: 100%; max-height: 400px; border-radius: 8px;">
-                    <source src="./video-file.mp4" type="video/mp4">
-                    متصفحك لا يدعم مشغل الفيديو.
-                </video>
+                <div style="background: #eef2f5; border: 2px dashed #cbd5e1; border-radius: 8px; padding: 25px 20px; text-align: center; color: #64748b;">
+                    <span style="font-size: 28px; display: block; margin-bottom: 6px;">🎬</span>
+                    <p style="font-weight: 600; margin-bottom: 4px; color: #475569;">العرض المرئي والفيلم الوثائقي للحفل</p>
+                    <span style="font-size: 12px; color: #94a3b8;">سيتم إدراج رابط التغطية المرئية فور اعتماد المونتاج النهائي</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="gallery" class="content-box">
+            <h3>📸 التغطية المصورة (معرض الصور)</h3>
+            <p style="margin-bottom: 20px;">لقطات توثيقية ترصد جوانب من حفل الزواج الجماعي الثاني عشر وتكريم اللجان والجهات المشاركة:</p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openImage('./images/28f85759-aef7-4203-ba17-c1fd9df1975d.jpg')">
+                    <img src="./images/28f85759-aef7-4203-ba17-c1fd9df1975d.jpg" alt="صورة من الحفل" loading="lazy">
+                </div>
+                <div class="gallery-item" onclick="openImage('./images/2ac99153-ef52-4bd6-a900-004b23a38495.jpg')">
+                    <img src="./images/2ac99153-ef52-4bd6-a900-004b23a38495.jpg" alt="صورة من الحفل" loading="lazy">
+                </div>
+                <div class="gallery-item" onclick="openImage('./images/35048002-fbfd-47f2-8e33-9b6e228c10f3.jpg')">
+                    <img src="./images/35048002-fbfd-47f2-8e33-9b6e228c10f3.jpg" alt="صورة من الحفل" loading="lazy">
+                </div>
+                <div class="gallery-item" onclick="openImage('./images/3eb850dc-b1c3-46c0-b1f3-c2ccab0a5c8b.jpg')">
+                    <img src="./images/3eb850dc-b1c3-46c0-b1f3-c2ccab0a5c8b.jpg" alt="صورة من الحفل" loading="lazy">
+                </div>
+                <div class="gallery-item" onclick="openImage('./images/7678f06f-3020-4be7-83d0-958d418f7c1a.jpg')">
+                    <img src="./images/7678f06f-3020-4be7-83d0-958d418f7c1a.jpg" alt="صورة من الحفل" loading="lazy">
+                </div>
+                <div class="gallery-item" onclick="openImage('./images/7f3805ce-063b-418a-81a4-e6b39bf250a0.jpg')">
+                    <img src="./images/7f3805ce-063b-418a-81a4-e6b39bf250a0.jpg" alt="صورة من الحفل" loading="lazy">
+                </div>
+                <div class="gallery-item" onclick="openImage('./images/aef751dd-984a-4f23-8cb7-f1fdb31d0bb7.jpg')">
+                    <img src="./images/aef751dd-984a-4f23-8cb7-f1fdb31d0bb7.jpg" alt="صورة من الحفل" loading="lazy">
+                </div>
+                <div class="gallery-item" onclick="openImage('./images/afc730c7-4b43-4913-aa17-cae9b376b340.jpg')">
+                    <img src="./images/afc730c7-4b43-4913-aa17-cae9b376b340.jpg" alt="صورة من الحفل" loading="lazy">
+                </div>
+                <div class="gallery-item" onclick="openImage('./images/c971bc86-e85a-42e6-8d5e-a3ee97125655.jpg')">
+                    <img src="./images/c971bc86-e85a-42e6-8d5e-a3ee97125655.jpg" alt="صورة من الحفل" loading="lazy">
+                </div>
+                <div class="gallery-item" onclick="openImage('./images/f18b0738-5503-4c82-8206-5d92f8b429bc.jpg')">
+                    <img src="./images/f18b0738-5503-4c82-8206-5d92f8b429bc.jpg" alt="صورة من الحفل" loading="lazy">
+                </div>
             </div>
         </div>
 
@@ -749,6 +882,12 @@
         </div>
     </div>
 
+    <!-- النافذة المنبثقة لتكبير الصور -->
+    <div id="imageModal" class="image-modal">
+        <button class="image-modal-close" onclick="closeImage()">&times;</button>
+        <img id="modalImage" class="image-modal-content" src="" alt="معاينة الصورة">
+    </div>
+
     <!-- الفوتر -->
     <footer>
         <div class="container">
@@ -760,7 +899,7 @@
     <script>
         function openPdf(fileUrl, title) {
             document.getElementById('pdfModalTitle').innerText = title;
-            document.getElementById('pdfFrame').src = fileUrl;
+            document.getElementById('pdfFrame').src = encodeURI(fileUrl);
             document.getElementById('pdfModal').style.display = 'flex';
         }
 
@@ -769,11 +908,25 @@
             document.getElementById('pdfFrame').src = '';
         }
 
-        // إغلاق النافذة عند الضغط خارجها
+        function openImage(imgSrc) {
+            document.getElementById('modalImage').src = imgSrc;
+            document.getElementById('imageModal').style.display = 'flex';
+        }
+
+        function closeImage() {
+            document.getElementById('imageModal').style.display = 'none';
+            document.getElementById('modalImage').src = '';
+        }
+
+        // إغلاق النوافذ المنبثقة عند الضغط خارجها
         window.onclick = function(event) {
-            var modal = document.getElementById('pdfModal');
-            if (event.target == modal) {
+            var pdfModal = document.getElementById('pdfModal');
+            if (event.target == pdfModal) {
                 closePdf();
+            }
+            var imgModal = document.getElementById('imageModal');
+            if (event.target == imgModal) {
+                closeImage();
             }
         }
     </script>
