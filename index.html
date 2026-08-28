@@ -547,7 +547,7 @@
                     <div class="file-title">كلمة مجلس الأمناء الرسمية</div>
                     <div class="file-meta">رسالة تهنئة وشكر لشيخ القبيلة واللجان والرجال المساهمين</div>
                     <div class="file-actions">
-                        <button type="button" onclick="openPdf('board-of-trustees.pdf', 'مجلس الأمناء')" class="pdf-btn">📄 استعراض الكلمة (PDF)</button>
+                        <a href="board-speech.pdf" target="_blank" rel="noopener noreferrer" class="pdf-btn">📄 استعراض الوثيقة (PDF)</a>
                     </div>
                 </div>
             </div>
@@ -632,14 +632,14 @@
                     <div class="file-title">كشف حساب بنك الراجحي (PDF)</div>
                     <div class="file-meta">كشف الحساب البنكي المعتمد لبرنامج الزواج الجماعي</div>
                     <div class="file-actions">
-                        <button type="button" onclick="openPdf('al-rajhi-bank-statement.pdf', 'كشف حساب بنك الراجحي')" class="pdf-btn">📄 فتح الملف</button>
+                        <a href="publish-approval.pdf" target="_blank" rel="noopener noreferrer" class="pdf-btn">📄 فتح الملف</a>
                     </div>
                 </div>
                 <div class="file-card">
                     <div class="file-title">التقرير المالي النهائي (Excel)</div>
                     <div class="file-meta">التقرير المالي النهائي لحفل الزواج الجماعي لقبيلة النوافلة</div>
                     <div class="file-actions">
-                        <a href="wedding-financial-report-final.xlsm" download="التقرير المالي النهائي لحفل الزواج الجماعي لقبيلة النوافلة.xlsm" class="pdf-btn" style="background: #e8f5e9; color: #1b5e20; border-color: #2e7d32;">📊 تحميل ملف الحسابات (Excel)</a>
+                        <a href="wedding-financial-report-final.xlsm" download="التقرير المالي النهائي لحفل الزواج الجماعي لقبيلة النوافلة.xlsm" target="_blank" rel="noopener noreferrer" class="pdf-btn" style="background: #e8f5e9; color: #1b5e20; border-color: #2e7d32;">📊 تحميل ملف الحسابات (Excel)</a>
                     </div>
                 </div>
             </div>
@@ -653,14 +653,14 @@
                     <div class="file-title">ضوابط الصرف</div>
                     <div class="file-meta">الضوابط المعتمدة لإدارة ومراقبة الصرف المالي</div>
                     <div class="file-actions">
-                        <button type="button" onclick="openPdf('spending-controls.pdf', 'ضوابط الصرف')" class="pdf-btn">📄 معاينة الوثيقة</button>
+                        <a href="disbursement-permit.pdf" target="_blank" rel="noopener noreferrer" class="pdf-btn">📄 معاينة الوثيقة</a>
                     </div>
                 </div>
                 <div class="file-card">
                     <div class="file-title">قرارات الصرف</div>
                     <div class="file-meta">القرارات الرسمية المعتمدة للصرف المالي</div>
                     <div class="file-actions">
-                        <button type="button" onclick="openPdf('disbursement-resolutions.pdf', 'قرارات الصرف')" class="pdf-btn">📄 معاينة الوثيقة</button>
+                        <a href="disbursement-approval.pdf" target="_blank" rel="noopener noreferrer" class="pdf-btn">📄 معاينة الوثيقة</a>
                     </div>
                 </div>
             </div>
@@ -745,6 +745,9 @@
                 </div>
                 <div class="gallery-item" onclick="openImage('images/f18b0738-5503-4c82-8206-5d92f8b429bc.jpg')">
                     <img src="images/f18b0738-5503-4c82-8206-5d92f8b429bc.jpg" alt="صورة من الحفل" loading="lazy">
+                </div>
+                <div class="gallery-item" onclick="openImage('images/gallery-new.jpg')">
+                    <img src="images/gallery-new.jpg" alt="صورة من الحفل" loading="lazy">
                 </div>
             </div>
         </div>
@@ -927,9 +930,7 @@
     <!-- السكريبت للتحكم بفتح الملفات مباشرة داخل الموقع -->
     <script>
         function openPdf(fileUrl, title) {
-            document.getElementById('pdfModalTitle').innerText = title;
-            document.getElementById('pdfFrame').src = encodeURI(fileUrl);
-            document.getElementById('pdfModal').style.display = 'flex';
+            window.open(fileUrl, '_blank', 'noopener,noreferrer');
         }
 
         function closePdf() {
