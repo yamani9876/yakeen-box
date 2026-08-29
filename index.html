@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
+    <script>
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+        if (window.location.hash) {
+            history.replaceState(null, document.title, window.location.pathname + window.location.search);
+        }
+        window.scrollTo(0, 0);
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>التقرير النهائي لحفل الزواج الجماعي الثاني عشر لقبيلة النوافل لعام 1448هـ</title>
@@ -17,7 +26,7 @@
         }
 
         html {
-            scroll-behavior: smooth;
+            scroll-behavior: auto;
         }
 
         body {
@@ -957,16 +966,6 @@
             if (event.target === imgModal) {
                 closeImage();
             }
-        });
-    </script>
-
-    <script>
-        if ('scrollRestoration' in history) {
-            history.scrollRestoration = 'manual';
-        }
-        window.scrollTo(0, 0);
-        window.addEventListener('load', function () {
-            window.scrollTo(0, 0);
         });
     </script>
 
